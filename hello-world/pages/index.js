@@ -1,5 +1,11 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 const Home = () => {
+    const router = useRouter();
+    const handleCLick = () => {
+        alert('Placing your order');
+        router.replace('/product');
+    };
     return (
         <>
             <h1>Home page</h1>
@@ -14,6 +20,7 @@ const Home = () => {
                 <li></li>
                 <li></li>
             </ul>
+            <button onClick={handleCLick}>Place order</button>
         </>
     );
 };
